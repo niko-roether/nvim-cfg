@@ -9,6 +9,8 @@ return require("packer").startup(function (use)
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
 
+	use "jiangmiao/auto-pairs"
+
 	use "itchyny/lightline.vim"
 
 	use "voldikss/vim-floaterm"
