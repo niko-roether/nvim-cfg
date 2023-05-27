@@ -9,8 +9,6 @@ return require("packer").startup(function (use)
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
 
-	use "jiangmiao/auto-pairs"
-
 	use "itchyny/lightline.vim"
 
 	use "voldikss/vim-floaterm"
@@ -21,6 +19,10 @@ return require("packer").startup(function (use)
 		"nvim-treesitter/nvim-treesitter",
 		{ run = ":TSUpdate" }
 	}
+
+	use "windwp/nvim-autopairs"
+
+	use "windwp/nvim-ts-autotag"
 
 	use "tpope/vim-fugitive"
 
@@ -44,5 +46,10 @@ return require("packer").startup(function (use)
 			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" }
 		}
+	}
+
+	use {
+		"prettier/vim-prettier",
+		{ run = "yarn install --frozen-lockfile --production" }
 	}
 end)
