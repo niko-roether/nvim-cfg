@@ -11,6 +11,8 @@ return require("packer").startup(function (use)
 
 	use "jiangmiao/auto-pairs"
 
+	use "maxmellon/vim-jsx-pretty"
+
 	use "itchyny/lightline.vim"
 
 	use "voldikss/vim-floaterm"
