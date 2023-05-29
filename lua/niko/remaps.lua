@@ -12,3 +12,5 @@ vim.keymap.set("n", "<C-L>", function() vim.cmd.tabnext("+") end)
 -- Git
 vim.keymap.set("n", "<leader>g", vim.cmd.Git)
 
+-- Mode switching
+vim.keymap.set("i", "<C-Enter>", "<Esc>")
