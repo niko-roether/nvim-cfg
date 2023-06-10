@@ -11,7 +11,7 @@ lsp.ensure_installed {
 }
 
 local cmp_mappings = lsp.defaults.cmp_mappings {
-	["<Return>"] = cmp.mapping.confirm({ select = false })
+	["<S-Return>"] = cmp.mapping.confirm()
 }
 
 lsp.setup_nvim_cmp {
