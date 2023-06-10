@@ -52,4 +52,6 @@ return require("packer").startup(function (use)
 		"prettier/vim-prettier",
 		{ run = "yarn install --frozen-lockfile --production" }
 	}
+
+	use "alx741/vim-rustfmt"
 end)
