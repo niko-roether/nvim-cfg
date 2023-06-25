@@ -1,6 +1,6 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require("packer").startup(function (use)
+return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	use {
@@ -52,6 +52,4 @@ return require("packer").startup(function (use)
 		"prettier/vim-prettier",
 		{ run = "yarn install --frozen-lockfile --production" }
 	}
-
-	use "alx741/vim-rustfmt"
 end)
