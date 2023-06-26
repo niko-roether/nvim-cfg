@@ -20,11 +20,6 @@ lsp.setup_nvim_cmp {
 
 lsp.setup()
 
-local function auto_format_buffer()
-	vim.lsp.buf.format({ async = true })
-end
-
-
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local opts = { buffer = args.buf }
@@ -36,11 +31,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 		vim.keymap.set("n", "sa", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "sr", vim.lsp.buf.rename, opts)
-		vim.keymap.set("n", "x", auto_format_buffer, opts)
+		vim.keymap.set("n", "sd", vim.diagnostic.open_float, opts)
+		vim.keymap.set("n", "x", function() vim.lsp.buf.format({ async = true }) end, opts)
 	end
 })
 
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-	callback = auto_format_buffer
+	callback = function()
+		vim.lsp.buf.format()
+	end
 });
