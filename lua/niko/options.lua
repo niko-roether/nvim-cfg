@@ -12,6 +12,3 @@ vim.o.incsearch = true
 vim.o.scrolloff = 8
 
 vim.o.updatetime = 50
-
--- Format on save
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]

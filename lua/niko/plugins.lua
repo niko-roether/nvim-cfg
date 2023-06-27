@@ -49,7 +49,7 @@ return require("packer").startup(function(use)
 	}
 
 	use {
-		"prettier/vim-prettier",
-		{ run = "yarn install --frozen-lockfile --production" }
+		"jose-elias-alvarez/null-ls.nvim",
+		requires = { { "nvim-lua/plenary.nvim"} }
 	}
 end)
