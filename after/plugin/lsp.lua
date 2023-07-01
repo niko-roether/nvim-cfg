@@ -50,13 +50,19 @@ local autoformat_cfg = {
 lsp.format_on_save(autoformat_cfg)
 lsp.format_mapping("<F3>", autoformat_cfg)
 
-lsp.setup()
-
 lspconfig.rust_analyzer.setup {
-	checkOnSave = {
-		command = "clippy"
+	settings = {
+		["rust-analyzer"] = {
+			checkOnSave = {
+				command = "clippy"
+			}
+		}
 	}
 }
+
+lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lsp.setup()
 
 null_ls.setup {
 	sources = {
