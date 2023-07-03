@@ -10,6 +10,8 @@ lsp.ensure_installed {
 	"rust_analyzer"
 }
 
+lsp.skip_server_setup { "tsserver", "eslint" }
+
 local cmp_mappings = lsp.defaults.cmp_mappings {
 	["<S-Return>"] = cmp.mapping.confirm()
 }
