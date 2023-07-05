@@ -7,10 +7,9 @@ lsp.preset("recommended")
 
 lsp.ensure_installed {
 	"lua_ls",
-	"rust_analyzer"
+	"rust_analyzer",
+	"svelte"
 }
-
-lsp.skip_server_setup { "tsserver", "eslint" }
 
 local cmp_mappings = lsp.defaults.cmp_mappings {
 	["<S-Return>"] = cmp.mapping.confirm()
@@ -38,6 +37,7 @@ local autoformat_cfg = {
 			"javascriptreact",
 			"typescriptreact",
 			"vue",
+			"svelte",
 			"css",
 			"scss",
 			"html",
@@ -68,10 +68,6 @@ lsp.setup()
 
 null_ls.setup {
 	sources = {
-		null_ls.builtins.code_actions.eslint_d,
-		null_ls.builtins.code_actions.refactoring,
-		null_ls.builtins.diagnostics.eslint_d,
-		null_ls.builtins.diagnostics.tsc,
 		null_ls.builtins.diagnostics.stylelint,
 		null_ls.builtins.diagnostics.tidy,
 		null_ls.builtins.formatting.prettierd
