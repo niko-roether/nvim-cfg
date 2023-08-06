@@ -1,7 +1,7 @@
 vim.g.mapleader = ","
 
 -- Explore files
-vim.keymap.set("n", "<leader>ls", vim.cmd.Ex)
+vim.keymap.set("n", "<C-L>", vim.cmd.Ex)
 
 -- Git
 vim.keymap.set("n", "<C-G>", vim.cmd.Git)
