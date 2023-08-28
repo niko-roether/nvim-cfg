@@ -8,7 +8,8 @@ lsp.preset("recommended")
 lsp.ensure_installed {
 	"lua_ls",
 	"rust_analyzer",
-	"svelte"
+	"svelte",
+	"wgsl_analyzer"
 }
 
 local cmp_mappings = lsp.defaults.cmp_mappings {
@@ -63,6 +64,8 @@ lspconfig.rust_analyzer.setup {
 }
 
 lspconfig.lua_ls.setup(lsp.nvim_lua_ls())
+
+lspconfig.wgsl_analyzer.setup {}
 
 lsp.setup()
 
