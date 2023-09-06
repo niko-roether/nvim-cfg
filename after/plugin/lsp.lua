@@ -71,7 +71,6 @@ lsp.setup()
 
 null_ls.setup {
 	sources = {
-		null_ls.builtins.diagnostics.stylelint,
 		null_ls.builtins.diagnostics.tidy,
 		null_ls.builtins.formatting.prettierd.with {
 			filetypes = { "html", "json", "svelte", "markdown", "css", "javascript", "javascriptreact", "typescript",
