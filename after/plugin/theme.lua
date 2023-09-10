@@ -1,6 +1,16 @@
-vim.o.termguicolors = true
-vim.g.sonokai_style = "andromeda"
-vim.g.sonokai_transparent_background = 1
-vim.g.sonokai_better_performance = 1
+local tokyonight = require("tokyonight")
+local lualine = require("lualine")
 
-vim.cmd("colorscheme sonokai")
+tokyonight.setup {
+	style = "storm",
+	transparent = true,
+
+}
+
+lualine.setup {
+	options = {
+		theme = "tokyonight",
+	}
+}
+
+vim.cmd("colorscheme tokyonight")

@@ -9,9 +9,15 @@ return require("packer").startup(function(use)
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
 
-	use "itchyny/lightline.vim"
+	use {
+		"nvim-lualine/lualine.nvim",
+		requires = {
+			"nvim-tree/nvim-web-devicons",
+			opt = true
+		}
+	}
 
-	use "sainnhe/sonokai"
+	use "folke/tokyonight.nvim"
 
 	use {
 		"nvim-treesitter/nvim-treesitter",
