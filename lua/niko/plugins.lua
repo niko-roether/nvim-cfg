@@ -11,8 +11,6 @@ return require("packer").startup(function(use)
 
 	use "itchyny/lightline.vim"
 
-	use "voldikss/vim-floaterm"
-
 	use "sainnhe/sonokai"
 
 	use {
@@ -51,10 +49,5 @@ return require("packer").startup(function(use)
 	use {
 		"jose-elias-alvarez/null-ls.nvim",
 		requires = { { "nvim-lua/plenary.nvim" } }
-	}
-
-	use {
-		"aserowy/tmux.nvim",
-		config = function() require("tmux").setup() end
 	}
 end)
