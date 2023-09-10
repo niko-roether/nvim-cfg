@@ -2,7 +2,7 @@ local tokyonight = require("tokyonight")
 local lualine = require("lualine")
 
 tokyonight.setup {
-	style = "storm",
+	style = "moon",
 	transparent = true,
 
 }
