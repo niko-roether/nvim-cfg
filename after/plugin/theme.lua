@@ -3,8 +3,6 @@ local lualine = require("lualine")
 
 tokyonight.setup {
 	style = "moon",
-	transparent = true,
-
 }
 
 lualine.setup {
