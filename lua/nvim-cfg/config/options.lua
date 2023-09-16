@@ -17,4 +17,4 @@ function M.setup()
 	vim.o.updatetime = 50
 end
 
-return M;
+return M
