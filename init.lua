@@ -1,3 +1,3 @@
 local lazy = require("lazy")
 
-lazy.setup(plugins)
+lazy.setup("plugins")
