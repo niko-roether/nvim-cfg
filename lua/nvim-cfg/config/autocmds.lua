@@ -10,16 +10,4 @@ local function register_filetype(pattern, filetype)
 	)
 end
 
-local custom_filetypes = {
-	["*.wgsl"] = "wgsl"
-}
-
-local M = {}
-
-function M.setup()
-	for pattern, filetype in pairs(custom_filetypes) do
-		register_filetype(pattern, filetype)
-	end
-end
-
-return M;
+register_filetype("*.wgsl", "wgsl");
