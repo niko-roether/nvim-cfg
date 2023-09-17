@@ -15,7 +15,7 @@ return {
 	},
 	config = function(_, opts)
 		local lspconfig = require("lspconfig");
-		local cmp_nvim_lsp = require("cmp-nvim-lsp");
+		local cmp_nvim_lsp = require("cmp_nvim_lsp");
 		local mason_lspconfig = require("mason-lspconfig");
 
 		local lsp_capabilities = cmp_nvim_lsp.default_capabilities();

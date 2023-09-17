@@ -3,6 +3,6 @@ return {
 	lazy = false,
 	version = "*",
 	dependencies = {
-		"nvim/tree/nvim-web-devicons"
+		"nvim-tree/nvim-web-devicons"
 	}
 }
