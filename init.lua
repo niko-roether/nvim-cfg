@@ -1,4 +1,3 @@
-local nvim_cfg = require("nvim-cfg")
+local lazy = require("lazy")
 
-nvim_cfg.setup()
-
+lazy.setup(plugins)
