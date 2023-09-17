@@ -10,4 +10,12 @@ local function register_filetype(pattern, filetype)
 	)
 end
 
-register_filetype("*.wgsl", "wgsl");
+local M = {}
+
+function M.setup()
+	register_filetype("*.wgsl", "wgsl");
+end
+
+function M.init() end
+
+return M;
