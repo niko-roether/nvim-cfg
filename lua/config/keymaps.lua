@@ -1,11 +1,7 @@
 local M = {}
 
-function M.init()
-	vim.g.mapleader = ","
-end
-
 function M.setup()
-	local telescope = require("telescope.builtin");
+	vim.g.mapleader = ","
 
 	-- List files
 	vim.keymap.set("n", "<C-L>", vim.cmd.Ex)
@@ -22,6 +18,11 @@ function M.setup()
 	
 	-- Neogit
 	vim.keymap.set("n", "<C-g>", vim.cmd.Neogit)
+
+end
+
+function M.after()
+	local telescope = require("telescope.builtin");
 
 	-- Telescope
 	vim.keymap.set('n', '<leader>ff', telescope.find_files, {})

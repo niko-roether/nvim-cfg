@@ -16,6 +16,6 @@ function M.setup()
 	register_filetype("*.wgsl", "wgsl");
 end
 
-function M.init() end
+function M.after() end
 
 return M;

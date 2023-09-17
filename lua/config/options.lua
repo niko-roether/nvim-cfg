@@ -1,6 +1,6 @@
 local M = {}
 
-function M.init() end
+function M.after() end
 
 function M.setup()
 	vim.o.clipboard = "unnamedplus"
@@ -10,7 +10,7 @@ function M.setup()
 	
 	vim.o.nu = true
 	vim.o.relativenumber = false
-	
+
 	vim.o.wrap = false
 	
 	vim.o.hlsearch = false

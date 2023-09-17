@@ -4,16 +4,16 @@ local options = require("config.options");
 
 local M = {}
 
-function M.init()
-	options.init()
-	keymaps.init()
-	autocmds.init()
-end
-
 function M.setup()
 	options.setup()
 	keymaps.setup()
 	autocmds.setup()
+end
+
+function M.after()
+	options.after()
+	keymaps.after()
+	autocmds.after()
 end
 
 return M;
