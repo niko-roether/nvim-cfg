@@ -14,19 +14,10 @@ return {
 		}
 	},
 	config = function(_, opts)
-		local lspconfig = require("lspconfig");
-		local cmp_nvim_lsp = require("cmp_nvim_lsp");
-		local mason_lspconfig = require("mason-lspconfig");
-
-		local lsp_capabilities = cmp_nvim_lsp.default_capabilities();
+	  local lsp = require("lsp");
+	  local mason_lspconfig = require("mason-lspconfig")
 
 		mason_lspconfig.setup(opts);
-		mason_lspconfig.setup_handlers {
-			function(server_name)
-				lspconfig[server_name].setup({
-					capabilities = lsp_capabilities
-				})
-			end
-		}
+		mason_lspconfig.setup_handlers { lsp.setup }
 	end
 }
