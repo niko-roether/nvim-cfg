@@ -18,6 +18,17 @@ function M.setup()
 
 	-- Neogit
 	vim.keymap.set("n", "<C-g>", vim.cmd.Neogit)
+end
+
+function M.after()
+	local telescope = require("telescope.builtin");
+	local format = require("lsp.format");
+
+	-- Telescope
+	vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+	vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
+	vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
+	vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
 
 	-- LSP Context
 	vim.api.nvim_create_autocmd("LspAttach", {
@@ -33,7 +44,7 @@ function M.setup()
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 			vim.keymap.set("n", "gs", vim.lsp.buf.signature_help, opts)
 			vim.keymap.set("n", "<F2>", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "<F3>", function() vim.lsp.buf.format({ async = true }) end, opts)
+			vim.keymap.set("n", "<F3>", function() format(evt.buf) end, opts)
 			vim.keymap.set("n", "<F4>", vim.lsp.buf.code_action, opts)
 
 			vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
@@ -41,16 +52,6 @@ function M.setup()
 			vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
 		end
 	})
-end
-
-function M.after()
-	local telescope = require("telescope.builtin");
-
-	-- Telescope
-	vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
-	vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
-	vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
-	vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
 end
 
 return M;
