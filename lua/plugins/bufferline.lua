@@ -2,7 +2,7 @@ local hidden_filetypes = { "oil" }
 
 return {
 	"akinsho/bufferline.nvim",
-	lazy = false,
+	event = "VimEnter",
 	version = "*",
 	opts = {
 		options = {

@@ -1,6 +1,6 @@
 return {
 	"folke/tokyonight.nvim",
-	lazy = false,
+	event = "VimEnter",
 	priority = 1000,
 	opts = {
 		style = "moon"

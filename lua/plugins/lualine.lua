@@ -1,8 +1,9 @@
 return {
 	"nvim-lualine/lualine.nvim",
-	lazy = false,
+	event = "VimEnter",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons"
+		"nvim-tree/nvim-web-devicons",
+		"folke/tokyonight.nvim"
 	},
 	opts = {
 		options = {
