@@ -6,9 +6,10 @@ function M.setup()
 	vim.o.clipboard = "unnamedplus"
 	
 	vim.o.tabstop = 4;
-	vim.o.shiftwidth = 4;
+	vim.o.shiftwidth = 2;
 	
 	vim.o.nu = true
+	vim.o.foldcolumn = "2"
 	vim.o.relativenumber = false
 
 	vim.o.wrap = false
@@ -20,6 +21,7 @@ function M.setup()
 	
 	vim.o.updatetime = 50
 	
+	vim.o.termguicolors = true
 	vim.cmd.colorscheme("tokyonight")
 end
 
