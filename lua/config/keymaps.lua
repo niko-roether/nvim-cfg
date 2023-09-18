@@ -18,6 +18,9 @@ function M.setup()
 
 	-- Neogit
 	vim.keymap.set("n", "<C-g>", vim.cmd.Neogit)
+
+	-- Lazy
+	vim.keymap.set("n", "<leader>l", vim.cmd.Lazy)
 end
 
 function M.after()
