@@ -1,4 +1,4 @@
-local function specialize(opts)
+local function config(opts)
   opts.settings = {
 	Lua = {
 	  runtime = {
@@ -20,4 +20,4 @@ local function specialize(opts)
   }
 end
 
-return specialize
+return config

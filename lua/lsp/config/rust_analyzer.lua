@@ -1,4 +1,4 @@
-local function specialize(opts)
+local function config(opts)
 	opts.settings = {
 		["rust-analyzer"] = {
 			checkOnSave = {
@@ -8,4 +8,4 @@ local function specialize(opts)
 	}
 end
 
-return specialize
+return config

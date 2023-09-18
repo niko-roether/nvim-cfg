@@ -8,6 +8,7 @@ return {
 	},
 	opts = {
 		ensure_installed = {
+			"efm",
 			"lua_ls",
 			"rust_analyzer",
 			"tsserver"
