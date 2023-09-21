@@ -35,11 +35,11 @@ local function config(opts)
 			graphql = { prettierd },
 			vue = { prettierd },
 			html = { prettierd },
-			svelte = { prettierd }
+			svelte = { eslint_d, prettierd }
 		}
 	}
 
-	opts.filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact" }
+	opts.filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte" }
 end
 
 return config
