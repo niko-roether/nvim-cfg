@@ -4,7 +4,7 @@ function M.setup()
 	vim.g.mapleader = ","
 
 	-- List files
-	vim.keymap.set("n", "<C-L>", vim.cmd.Oil)
+	vim.keymap.set("n", "-", vim.cmd.Oil)
 
 	-- Resize windows
 	vim.keymap.set("n", "<C-w-Up>", "<cmd>resize +2<cr>")
