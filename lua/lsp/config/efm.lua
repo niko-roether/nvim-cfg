@@ -14,9 +14,10 @@ local prettierd = {
 }
 
 local markdownlint = {
-	lintCommand = "markdownlint -s",
-	lintSdtin = true,
-	lintFormats = { "%f: %l: %m" }
+	lintCommand = "npx --no-install markdownlint -s",
+	lintStdin = true,
+	lintFormats = { "%f:%l:%c MD%n/%*[^ ] %m", "%f:%l MD%n/%*[^ ] %m" },
+	formatCommand = "npx --no-install markdownlint --fix ${INPUT}"
 }
 
 local function config(opts)
@@ -32,7 +33,7 @@ local function config(opts)
 			typescript = { eslint_d, prettierd },
 			typescriptreact = { eslint_d, prettierd },
 			yaml = { prettierd },
-			markdown = { prettierd, markdownlint },
+			markdown = { markdownlint, prettierd },
 			css = { prettierd },
 			scss = { prettierd },
 			sass = { prettierd },
@@ -45,7 +46,7 @@ local function config(opts)
 		}
 	}
 
-	opts.filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte" }
+	opts.filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte", "markdown" }
 end
 
 return config
