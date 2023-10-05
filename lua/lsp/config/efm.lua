@@ -17,7 +17,6 @@ local markdownlint = {
 	lintCommand = "npx --no-install markdownlint -s",
 	lintStdin = true,
 	lintFormats = { "%f:%l:%c MD%n/%*[^ ] %m", "%f:%l MD%n/%*[^ ] %m" },
-	formatCommand = "npx --no-install markdownlint --fix ${INPUT}"
 }
 
 local function config(opts)
