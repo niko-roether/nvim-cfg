@@ -13,6 +13,12 @@ local prettierd = {
 	formatStdin = true
 }
 
+local markdownlint = {
+	lintCommand = "markdownlint -s",
+	lintSdtin = true,
+	lintFormats = { "%f: %l: %m" }
+}
+
 local function config(opts)
 	function opts.on_attach(client)
 		client.server_capabilities.documentFormattingProvider = true
@@ -26,7 +32,7 @@ local function config(opts)
 			typescript = { eslint_d, prettierd },
 			typescriptreact = { eslint_d, prettierd },
 			yaml = { prettierd },
-			markdown = { prettierd },
+			markdown = { prettierd, markdownlint },
 			css = { prettierd },
 			scss = { prettierd },
 			sass = { prettierd },
