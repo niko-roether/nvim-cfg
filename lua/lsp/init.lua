@@ -11,7 +11,7 @@ local special_configs = {
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
-vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off")
 
 local M = {}
 
