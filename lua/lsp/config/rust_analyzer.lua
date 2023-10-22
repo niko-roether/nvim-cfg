@@ -1,14 +1,15 @@
 local function config(opts)
-	local leptosfmt_exists = vim.fs.find("leptosfmt.toml", {
+	local leptosfmt_exists = not vim.tbl_isempty(vim.fs.find("leptosfmt.toml", {
 		upward = true,
-		stop = "/",
+		stop = vim.fn.getcwd(),
 		path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-	}) ~= nil;
+	}));
 
-	local rustfmt_override = nil
+	local rustfmt_override = { "rustfmt", "--" }
+
 
 	if leptosfmt_exists then
-		rustfmt_override = { "leptosfmt", "--stdin", "--rustfmt" }
+		rustfmt_override = { "leptosfmt", "--stdin", "--rustfmt", "--" }
 	end
 
 	opts.settings = {
