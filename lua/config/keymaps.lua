@@ -16,6 +16,12 @@ function M.setup()
 	vim.keymap.set("n", "[b", vim.cmd.BufferLineCyclePrev)
 	vim.keymap.set("n", "]b", vim.cmd.BufferLineCycleNext)
 
+	-- Formatting
+	vim.keymap.set("n", "<C-k>", "<cmd>m-2<cr>")
+	vim.keymap.set("n", "<C-j>", "<cmd>m+<cr>")
+	vim.keymap.set("v", "<C-k>", ":m-2<cr>gv")
+	vim.keymap.set("v", "<C-j>", ":m'>+<cr>gv")
+
 	-- Neogit
 	vim.keymap.set("n", "<C-g>", vim.cmd.Neogit)
 
