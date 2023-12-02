@@ -11,12 +11,13 @@ return {
 			"efm",
 			"lua_ls",
 			"rust_analyzer",
-			"tsserver"
+			"tsserver",
+			"zls"
 		}
 	},
 	config = function(_, opts)
-	  local lsp = require("lsp");
-	  local mason_lspconfig = require("mason-lspconfig")
+		local lsp = require("lsp");
+		local mason_lspconfig = require("mason-lspconfig")
 
 		mason_lspconfig.setup(opts);
 		mason_lspconfig.setup_handlers { lsp.setup }
