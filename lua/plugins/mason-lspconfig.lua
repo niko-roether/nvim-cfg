@@ -12,7 +12,9 @@ return {
 			"lua_ls",
 			"rust_analyzer",
 			"tsserver",
-			"zls"
+			"zls",
+			"ocamllsp",
+			"clangd"
 		}
 	},
 	config = function(_, opts)
