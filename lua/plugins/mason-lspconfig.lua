@@ -13,8 +13,6 @@ return {
 			"rust_analyzer",
 			"tsserver",
 			"zls",
-			"ocamllsp",
-			"clangd"
 		}
 	},
 	config = function(_, opts)
