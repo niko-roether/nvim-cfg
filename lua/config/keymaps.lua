@@ -60,10 +60,22 @@ function M.after()
 	local telescope = require("telescope.builtin");
 
 	-- Telescope
-	vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
-	vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
-	vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
-	vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
+	vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
+	vim.keymap.set("n", "<leader>fg", telescope.live_grep, {})
+	vim.keymap.set("n", "<leader>fb", telescope.buffers, {})
+	vim.keymap.set("n", "<leader>fh", telescope.help_tags, {})
+
+	vim.api.nvim_create_autocmd("LspAttach", {
+		desc = "Telescope LSP Keybinds",
+		callback = function(evt)
+			local opts = { buffer = evt.buf }
+
+			vim.keymap.set("n", "<leader>fr", telescope.lsp_references, opts)
+			vim.keymap.set("n", "<leader>fs", telescope.lsp_document_symbols, opts)
+			vim.keymap.set("n", "<leader>fS", telescope.lsp_workspace_symbols, opts)
+			vim.keymap.set("n", "<leader>fd", telescope.diagnostics, opts)
+		end
+	})
 end
 
 return M;
