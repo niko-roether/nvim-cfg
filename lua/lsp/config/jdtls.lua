@@ -11,6 +11,17 @@ local function config(opts)
 		"-data",
 		home .. "/.cache/jdtls/workspace"
 	}
+	opts.settings = {
+		java = {
+			format = {
+				enabled = false,
+				settings = {
+					url = vim.fn.expand("$HOME/.config/jdtls/style.xml"),
+					profile = "Default"
+				}
+			}
+		}
+	}
 end
 
 return config
