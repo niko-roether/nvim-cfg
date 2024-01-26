@@ -14,14 +14,14 @@ function M.setup()
 
 	vim.o.nu = true
 	vim.o.signcolumn = "yes"
-	vim.o.relativenumber = false
+	vim.o.relativenumber = true
 
 	vim.o.wrap = false
 
 	vim.o.hlsearch = false
 	vim.o.incsearch = true
 
-	vim.o.scrolloff = 8
+	vim.o.scrolloff = 0
 
 	vim.o.updatetime = 50
 
