@@ -8,7 +8,7 @@ function M.setup()
 	vim.o.tabstop = 4
 	vim.o.shiftwidth = 4
 	vim.o.softtabstop = 0
-	vim.o.noexpandtab = true
+	vim.o.expandtab = false
 
 	vim.o.nu = true
 	vim.o.signcolumn = "yes"
