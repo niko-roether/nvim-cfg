@@ -45,7 +45,15 @@ local function config(opts)
 		}
 	}
 
-	opts.filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "svelte", "markdown" }
+	opts.filetypes = {
+		"typescript",
+		"typescriptreact",
+		"javascript",
+		"javascriptreact",
+		"svelte",
+		"markdown",
+		"json"
+	}
 end
 
 return config
