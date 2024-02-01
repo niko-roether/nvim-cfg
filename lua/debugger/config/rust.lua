@@ -101,5 +101,13 @@ return {
 			local test_name = vim.fn.input("Test name: ")
 			return get_program("--test " .. test_name)
 		end
+	},
+	{
+		name = "Debug Custom Executable",
+		type = "gdb",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Executable path: ", vim.fn.getcwd() .. "/", "file")
+		end
 	}
 }
