@@ -58,6 +58,8 @@ end
 
 function M.after()
 	local telescope = require("telescope.builtin");
+	local dap = require("dap");
+	local dap_widgets = require("dap.ui.widgets");
 
 	-- Telescope
 	vim.keymap.set("n", "<leader>ff", telescope.find_files, {})
@@ -76,6 +78,22 @@ function M.after()
 			vim.keymap.set("n", "<leader>fd", telescope.diagnostics, opts)
 		end
 	})
+
+	-- Debugger
+	vim.keymap.set("n", "<F5>", dap.toggle_breakpoint)
+	vim.keymap.set("n", "<F9>", dap.continue)
+	vim.keymap.set("n", "<F10>", dap.step_over)
+	vim.keymap.set("n", "<F11>", dap.step_into)
+	vim.keymap.set("n", "<F12>", dap.step_out)
+	vim.keymap.set("n", "<leader>dr", dap.repl.open)
+	vim.keymap.set({ "n", "v" }, "<leader>dh", dap_widgets.hover)
+	vim.keymap.set({ "n", "v" }, "<leader>dp", dap_widgets.preview)
+	vim.keymap.set({ "n", "v" }, "<leader>df", function()
+		dap_widgets.centered_float(dap_widgets.frames)
+	end)
+	vim.keymap.set({ "n", "v" }, "<leader>ds", function()
+		dap_widgets.centered_float(dap_widgets.scopes)
+	end)
 end
 
 return M;
