@@ -3,8 +3,9 @@ local M = {}
 function M.setup()
 	vim.g.mapleader = ","
 
-	-- List files
-	vim.keymap.set("n", "-", vim.cmd.Oil)
+	-- File manager
+	vim.keymap.set("n", "<leader>np", vim.cmd.NnnPicker)
+	vim.keymap.set("n", "<leader>ne", vim.cmd.NnnExplorer)
 
 	-- Resize windows
 	vim.keymap.set("n", "<C-w-Up>", "<cmd>resize +2<cr>")
