@@ -5,9 +5,10 @@ return {
 		local cfg = {
 			replace_netrw = "explorer",
 			mappings = {
-				{ "<C-p>", nnn.builtin.open_in_preview },
-				{ "<C-y>", nnn.builtin.copy_to_clipboard },
-				{ "<C-t>", nnn.builtin.open_in_tab }
+				{ "<C-s>", nnn.builtin.open_in_split },
+				{ "<C-v>", nnn.builtin.open_in_vsplit },
+				{ "<C-w>", nnn.builtin.cd_to_path },
+				{ "<C-e>", nnn.builtin.populate_cmdline }
 			}
 		}
 		nnn.setup(cfg)
