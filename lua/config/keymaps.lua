@@ -8,10 +8,10 @@ function M.setup()
 	vim.keymap.set("n", "<leader>ne", vim.cmd.NnnExplorer)
 
 	-- Resize windows
-	vim.keymap.set("n", "<C-w-Up>", "<cmd>resize +2<cr>")
-	vim.keymap.set("n", "<C-w-Down>", "<cmd>resize -2<cr>")
-	vim.keymap.set("n", "<C-w-Left>", "<cmd>vertical resize -2<cr>")
-	vim.keymap.set("n", "<C-w-Right>", "<cmd>vertical resize +2<cr>")
+	vim.keymap.set("n", "<C-w><S-K>", "<cmd>resize +2<cr>")
+	vim.keymap.set("n", "<C-w><S-J>", "<cmd>resize -2<cr>")
+	vim.keymap.set("n", "<C-w><S-L>", "<cmd>vertical resize -2<cr>")
+	vim.keymap.set("n", "<C-w><S-H>", "<cmd>vertical resize +2<cr>")
 
 	-- Move between buffers
 	vim.keymap.set("n", "[b", vim.cmd.BufferLineCyclePrev)
