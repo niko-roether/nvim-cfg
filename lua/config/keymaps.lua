@@ -59,6 +59,7 @@ end
 
 function M.after()
 	local telescope = require("telescope.builtin");
+	local oil = require("oil");
 	local dap = require("dap");
 	local dap_widgets = require("dap.ui.widgets");
 
@@ -79,6 +80,10 @@ function M.after()
 			vim.keymap.set("n", "<leader>fd", telescope.diagnostics, opts)
 		end
 	})
+
+	-- File manager
+	vim.keymap.set("n", "<leader>ec", function() oil.toggle_float() end)
+	vim.keymap.set("n", "<leader>ew", function() oil.toggle_float(vim.fn.getcwd()) end)
 
 	-- Debugger
 	vim.keymap.set("n", "<F5>", dap.toggle_breakpoint)
