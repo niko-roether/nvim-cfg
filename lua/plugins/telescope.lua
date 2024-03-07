@@ -6,6 +6,11 @@ return {
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter"
+		},
+		opts = {
+			defaults = {
+				file_ignore_patterns = { ".git/" }
+			}
 		}
 	}
 }
