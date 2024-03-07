@@ -13,9 +13,23 @@ function M.setup()
 	vim.keymap.set("n", "<C-w><S-L>", "<cmd>vertical resize -2<cr>")
 	vim.keymap.set("n", "<C-w><S-H>", "<cmd>vertical resize +2<cr>")
 
-	-- Move between buffers
-	vim.keymap.set("n", "[b", vim.cmd.BufferLineCyclePrev)
-	vim.keymap.set("n", "]b", vim.cmd.BufferLineCycleNext)
+	-- Tabs
+	vim.keymap.set("n", "<C-t>l", vim.cmd.BufferNext)
+	vim.keymap.set("n", "<C-t>h", vim.cmd.BufferPrevious)
+	vim.keymap.set("n", "<C-t><S-l>", vim.cmd.BufferNext)
+	vim.keymap.set("n", "<C-t><S-h>", vim.cmd.BufferPrevious)
+	for i = 1, 9 do
+		vim.keymap.set("n", "<C-t>" .. i, function() vim.cmd.BufferGoto(i) end)
+	end
+	vim.keymap.set("n", "<C-t>0", vim.cmd.BufferLast)
+	vim.keymap.set("n", "<C-t>p", vim.cmd.BufferPin)
+	vim.keymap.set("n", "<C-t>q", vim.cmd.BufferClose)
+	vim.keymap.set("n", "<C-t>c", vim.cmd.BufferCloseAllButCurrent)
+	vim.keymap.set("n", "<C-p>", vim.cmd.BufferPick)
+	vim.keymap.set("n", "<leader>tb", vim.cmd.BufferOrderByBufferNumber)
+	vim.keymap.set("n", "<leader>td", vim.cmd.BufferOrderByDirectory)
+	vim.keymap.set("n", "<leader>tl", vim.cmd.BufferOrderByLanguage)
+	vim.keymap.set("n", "<leader>tw", vim.cmd.BufferOrderByWindowNumber)
 
 	-- Formatting
 	vim.keymap.set("n", "<C-k>", "<cmd>m-2<cr>")
