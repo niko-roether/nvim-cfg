@@ -1,7 +1,13 @@
+local globals = require("globals")
+
 local M = {}
 
 function M.after()
-	vim.cmd.colorscheme("tokyonight-storm")
+	if globals.theme_variant ~= nil then
+		vim.cmd.colorscheme(globals.theme .. "-" .. globals.theme_variant)
+	else
+		vim.cmd.colorscheme(globals.theme)
+	end
 end
 
 function M.setup()

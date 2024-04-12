@@ -1,3 +1,5 @@
+local globals = require("globals")
+
 return {
 	"nvim-lualine/lualine.nvim",
 	event = "VimEnter",
@@ -7,7 +9,7 @@ return {
 	},
 	opts = {
 		options = {
-			theme = "tokyonight"
+			theme = globals.theme
 		}
 	}
 }
