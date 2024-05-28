@@ -5,22 +5,16 @@ local function config(opts)
 		path = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
 	}));
 
-	local rustfmt_override = { "rustfmt", "--" }
-
+	local options = {
+		checkOnSave = "clippy"
+	}
 
 	if leptosfmt_exists then
-		rustfmt_override = { "leptosfmt", "--stdin", "--rustfmt", "--" }
+		options["rustfmt"] = { overrideCommand = { "leptosfmt", "--stdin", "--rustfmt", "--" } }
 	end
 
 	opts.settings = {
-		["rust-analyzer"] = {
-			checkOnSave = {
-				command = "clippy"
-			},
-			rustfmt = {
-				overrideCommand = rustfmt_override
-			}
-		}
+		["rust-analyzer"] = options
 	}
 end
 
