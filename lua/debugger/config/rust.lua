@@ -98,8 +98,11 @@ return {
 		type = "gdb",
 		request = "launch",
 		program = function()
+			return get_program("--tests")
+		end,
+		args = function()
 			local test_name = vim.fn.input("Test name: ")
-			return get_program("--test " .. test_name)
+			return test_name
 		end
 	},
 	{
