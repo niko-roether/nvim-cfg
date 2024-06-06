@@ -6,7 +6,9 @@ local function config(opts)
 	}));
 
 	local options = {
-		checkOnSave = "clippy"
+		checkOnSave = {
+			command = "clippy"
+		}
 	}
 
 	if leptosfmt_exists then
