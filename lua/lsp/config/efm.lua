@@ -32,7 +32,7 @@ local function config(opts)
 			typescript = { eslint_d, prettierd },
 			typescriptreact = { eslint_d, prettierd },
 			yaml = { prettierd },
-			markdown = { markdownlint, prettierd },
+			markdown = { prettierd },
 			css = { prettierd },
 			scss = { prettierd },
 			sass = { prettierd },
