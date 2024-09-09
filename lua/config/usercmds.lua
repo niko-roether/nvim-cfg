@@ -19,6 +19,22 @@ function M.setup()
 			end
 		}
 	)
+
+	vim.api.nvim_create_user_command(
+		"Presentation",
+		function(opts)
+			print("Entering presentation mode...")
+			require("lualine").hide()
+			vim.o.wrap = true
+			vim.o.nu = false
+			vim.o.relativenumber = false
+			vim.o.signcolumn = "no"
+			vim.o.laststatus = 0
+		end,
+		{
+			nargs = 0
+		}
+	)
 end
 
 function M.after() end
