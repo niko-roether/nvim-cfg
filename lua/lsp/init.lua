@@ -6,7 +6,7 @@ local special_configs = {
 	lua_ls = require("lsp.config.lua_ls"),
 	rust_analyzer = require("lsp.config.rust_analyzer"),
 	jdtls = require("lsp.config.jdtls"),
-	tsserver = require("lsp.config.disable_formatting"),
+	ts_ls = require("lsp.config.disable_formatting"),
 	svelte = require("lsp.config.disable_formatting"),
 }
 
