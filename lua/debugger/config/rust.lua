@@ -67,7 +67,7 @@ end
 return {
 	{
 		name = "Debug Application",
-		type = "gdb",
+		type = "rust_gdb",
 		request = "launch",
 		program = function()
 			return get_program("")
@@ -75,7 +75,7 @@ return {
 	},
 	{
 		name = "Debug Application with Arguments",
-		type = "gdb",
+		type = "rust_gdb",
 		request = "launch",
 		program = function()
 			return get_program("")
@@ -87,7 +87,7 @@ return {
 	},
 	{
 		name = "Debug Tests",
-		type = "gdb",
+		type = "rust_gdb",
 		request = "launch",
 		program = function()
 			return get_program("--tests")
@@ -95,7 +95,7 @@ return {
 	},
 	{
 		name = "Debug Specific Test",
-		type = "gdb",
+		type = "rust_gdb",
 		request = "launch",
 		program = function()
 			return get_program("--tests")
@@ -107,7 +107,7 @@ return {
 	},
 	{
 		name = "Debug Custom Executable",
-		type = "gdb",
+		type = "rust_gdb",
 		request = "launch",
 		program = function()
 			return vim.fn.input("Executable path: ", vim.fn.getcwd() .. "/", "file")
