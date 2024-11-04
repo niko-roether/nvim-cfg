@@ -1,3 +1,5 @@
+require("./bootstrap");
+
 local lazy = require("lazy")
 local config = require("config");
 
