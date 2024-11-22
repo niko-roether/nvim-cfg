@@ -7,7 +7,7 @@ local function config(opts)
 
 	local options = {
 		checkOnSave = {
-			command = "clippy"
+			command = os.getenv("NVIM_RUST_CHECK_ON_SAVE") or "clippy"
 		}
 	}
 
