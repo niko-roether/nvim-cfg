@@ -8,6 +8,7 @@ local special_configs = {
 	jdtls = require("lsp.config.jdtls"),
 	ts_ls = require("lsp.config.disable_formatting"),
 	svelte = require("lsp.config.disable_formatting"),
+	ltex = require("lsp.config.ltex"),
 }
 
 local capabilities = cmp_nvim_lsp.default_capabilities()
